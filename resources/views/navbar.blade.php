@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<!-- @extends('layouts.app') -->
 @section ('content')
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <img id="logo" src="{{URL::asset('/image/buku.png')}}" style="height: 25px; padding-left: 3px">
