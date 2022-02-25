@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/home', function () {
@@ -24,6 +24,9 @@ Route::get('/home', function () {
 Route::get('/courses', function () {
     return view('courses');
 });
+
+Route::get('/logout', 'Auth\LoginController@logout');
+
 Auth::routes();
 
 // Route::redirect('/home', '/#');

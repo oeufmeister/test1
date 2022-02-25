@@ -1,55 +1,74 @@
-@extends('layouts.app')
 
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title>
-        ODSL - Courses
-    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <img id="logo" src="{{URL::asset('/image/buku.png')}}" style="height: 25px; padding-left: 3px">
-                <a class="navbar-brand" href="#" style="padding-left: 5px">ODSL</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/courses">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Courses
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Course 1</a>
-                        <a class="dropdown-item" href="#">Course 2</a>
-                        <a class="dropdown-item" href="#">Course 3</a>
-                        </div>
-                    </li>
-                    <li>
-                        @if (Route::has('login'))
-                        <div class="top-right links">
-                            @auth
-                                <a href="{{ url('/home') }}">Home</a>
-                            @else
-                                <a href="{{ route('login') }}">Login</a>
-    
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}">Register</a>
-                                @endif
-                            @endauth
-                        </div>
-                        @endif
-                    </li>
-                    </ul>
-                </div>
-            </nav>
+@include ('navbar')
 
+
+            <div class="container">
+                <h1 class="title m-b-md" style="text-align: center; font-size: 84px; margin-bottom:35px">Courses</h1>
+<table class="table table-striped" style="font-size: 20px">
+    <thead>
+        <tr>
+        <th scope="col">#</th>
+        <th scope="col" class="text-center">Courses</th>
+        <th scope="col" class="text-nowrap text-center">Course Code</th>
+        <th scope="col" class="text-center">Description</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                    <td>C++</td>
+                    <td>C_CPP</td>
+                    <td>C++ is an object-oriented programming language which gives a clear structure to programs and allows code to be reused, lowering development costs. C++ is portable and can be used to develop applications that can be adapted to multiple platforms. C++ is fun and easy to learn. This course tells you how to use it, and develop simple algorithms with it, good luck!</td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                    <td>JavaScript</td>
+                    <td>C_JS</td>
+                    <td>JavaScript (often shortened to JS) is a lightweight, interpreted, object-oriented language with first-class functions, and is best known as the scripting language for Web pages, but it's used in many non-browser environments as well. This course will help you to understand the fundamentals of JavaScript, and hopefully you, the trainee, will be able to use it in a professional manner!</td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                    <td>C#</td>
+                    <td>C_CS</td>
+                    <td>C# (pronounced "C-sharp") is an object-oriented programming language from Microsoft that aims to combine the computing power of C++ with the programming ease of Visual Basic. C# is based on C++ and contains features similar to those of Java. C# is designed to work with Microsoft's.</td>
+                </tr>
+                <th scope="row">4</th>
+                    <td>Python</td>
+                    <td>C_PY</td>
+                    <td>Python is an interpreted, object-oriented, high-level programming language with dynamic semantics developed by Guido van Rossum. It was originally released in 1991. Designed to be easy as well as fun, the name "Python" is a nod to the British comedy group Monty Python.</td>
+                </tr>
+                <th scope="row">5</th>
+                    <td>HTML/CSS</td>
+                    <td>C_HC</td>
+                    <td>HTML (the Hypertext Markup Language) and CSS (Cascading Style Sheets) are two of the core technologies for building Web pages. HTML provides the structure of the page, CSS the (visual and aural) layout, for a variety of devices. Along with graphics and scripting, HTML and CSS are the basis of building Web pages and Web Applications.</td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+@include('footer')
+
+</body>    
 </body>
+</html>

@@ -65,13 +65,13 @@
             }
 
             #judul {
-                text-align: left;
+                text-align: center;
                 font-size: 84px;
                 
             }
 
             #subjudul {
-                text-align: left;
+                text-align: center;
                 font-size: 30px;
                 margin-bottom: 15px;
                 
@@ -89,12 +89,14 @@
     <body>
         @include('navbar')
         
+        
         <div class="flex-center position-ref full-height">
            
 
             <div class="content">
                 <div class="title m-b-md" id="judul">
                     ODSL
+                    
                 </div>
                 <div>
                     <h2 class="title m-b-md" id="subjudul">Always looking out for you!</h2>
@@ -112,7 +114,7 @@
                 </div>
             </div>
         </div>
-        @yield('footer')
+        @include('footer')
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
